@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Debug (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "C:\\Program Files\\nodejs\\node.exe",
+            "args": [
+                "bin/main.js"
+            ],
+            "cwd": "${workspaceRoot}/test"
+        }
+    ]
+}
