@@ -9,7 +9,8 @@
             "args": [
                 "bin/main.js"
             ],
-            "cwd": "${workspaceRoot}/test"
+            "cwd": "${workspaceRoot}/test",
+            "console": "integratedTerminal"
         },
         {
             "name": "Debug (Linux)",

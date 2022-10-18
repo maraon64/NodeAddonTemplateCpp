@@ -1,2 +1,2 @@
 const os = require('os');
-module.exports = require(`./addon-${os.platform()}-${os.arch()}.node`);
+module.exports = require(`./addon-${process.platform}-${process.arch}.node`);
