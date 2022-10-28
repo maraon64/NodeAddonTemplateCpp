@@ -15,19 +15,19 @@ endif()
 
 add_library(node-addon-api INTERFACE IMPORTED)
 set_target_properties(node-addon-api PROPERTIES
-    INTERFACE_COMPILE_DEFINITIONS "${COMPILE_DEFINITIONS}"
-    INTERFACE_INCLUDE_DIRECTORIES "${INCLUDE_DIRECTORIES}")
+                      INTERFACE_COMPILE_DEFINITIONS "${COMPILE_DEFINITIONS}"
+                      INTERFACE_INCLUDE_DIRECTORIES "${INCLUDE_DIRECTORIES}")
 if(WIN32)
     set_target_properties(node-addon-api PROPERTIES
-        INTERFACE_LINK_LIBRARIES "${LINK_LIBRARIES}"
-        INTERFACE_LINK_OPTIONS "/DELAYLOAD:${NODE_HOST_BINARY}"
-        INTERFACE_SOURCES "${NODE_DEV_DIR}/src/win_delay_load_hook.cc")
+                          INTERFACE_LINK_LIBRARIES "${LINK_LIBRARIES}"
+                          INTERFACE_LINK_OPTIONS "/DELAYLOAD:${NODE_HOST_BINARY}"
+                          INTERFACE_SOURCES "${NODE_DEV_DIR}/src/win_delay_load_hook.cc")
 endif()
 
 function(configure_node_module target)
     target_link_libraries(${target} PRIVATE node-addon-api)
     set_target_properties(${target} PROPERTIES
-        PREFIX ""
-        SUFFIX "-${TARGET_PLATFORM}-${TARGET_ARCH}.node"
-        PDB_NAME "${target}-${TARGET_PLATFORM}-${TARGET_ARCH}")
+                          PREFIX ""
+                          SUFFIX "-${TARGET_PLATFORM}-${TARGET_ARCH}.node"
+                          PDB_NAME "${target}-${TARGET_PLATFORM}-${TARGET_ARCH}")
 endfunction()
