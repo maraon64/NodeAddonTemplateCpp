@@ -276,8 +276,8 @@ inline Napi::Value fromPath(Napi::Env env, const std::filesystem::path& value) {
     return Napi::String::New(env, reinterpret_cast<const char*>(str.data()), str.size());
 }
 
-inline Napi::Value fromSize(Napi::Env env, size_t size) {
-    return fromU64_n(env, size);
+inline Napi::Value fromSize(Napi::Env env, size_t value) {
+    return fromU64_n(env, value);
 }
 
 }
