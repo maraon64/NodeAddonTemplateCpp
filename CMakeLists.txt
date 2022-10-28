@@ -6,7 +6,10 @@ include(initProject)
 setup_os_vars()
 include(importNode)
 
-set(SRC "src/main.cpp")
+set(SRC
+    "src/main.cpp"
+    "src/valueConverter.hpp"
+    )
 
 add_library(addon SHARED ${SRC})
 configure_node_module(addon)
