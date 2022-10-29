@@ -7,8 +7,8 @@ setup_os_vars()
 include(importNode)
 
 set(SRC
-    "src/main.cpp"
-    "src/valueConverter.hpp"
+    src/main.cpp
+    src/valueConverter.hpp
     )
 
 add_library(addon SHARED ${SRC})
